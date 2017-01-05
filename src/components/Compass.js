@@ -29,6 +29,9 @@ class Compass extends React.Component {
   }
 
   constructQuestions(questions) {
+    if(questions.length === 0){
+      return <h1> You lose, bitch. </h1>
+    }
     return questions.map((q, i) => {
       return (
         <div className="question-block" key={i}>
