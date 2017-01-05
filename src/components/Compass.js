@@ -61,11 +61,11 @@ class Compass extends React.Component {
 
   render() {
     const { questions, questionIndex, socialScore, economicsScore } = this.state;
-    if (this.state.questions[this.state.questionIndex]) {
-      const formattedQuestions = this.constructQuestion(questions[questionIndex]);
+    if (questions[questionIndex]) {
+      const formattedQuestion = this.constructQuestion(questions[questionIndex]);
       return (
         <div>
-        {formattedQuestions}
+        {formattedQuestion}
         </div>
       );
     }
