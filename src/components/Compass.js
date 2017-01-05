@@ -40,10 +40,10 @@ class Compass extends React.Component {
         <p>{question.content}</p>
         <p>Type: {question.type}</p>
 
-        {question.options.map((o,i)=>{
+        {question.options.map((option,i)=>{
           return (
             <div key={i}>
-              <button onClick={this.computeChoice.bind(this, o, question)}>{o}</button>
+              <button onClick={this.computeChoice.bind(this, option, question)}>{option}</button>
             </div>
           )
         })}
