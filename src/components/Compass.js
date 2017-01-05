@@ -10,39 +10,33 @@ class Compass extends React.Component {
 
       this.state = {
         questions: content.questions,
-        score: 0,
-        currentQuestion: 0
+        questionIndex: 0
       }
   }
 
 
-  computeChoice(choice, question, index) {
-    const isCorrect = choice === question.answer ? true : false;
+  computeChoice(option, question) {
+    const completedQuestion = Object.assign(question, {completed: true });
+    const updatedQuestions = this.state.questions.map((q,i) => q.id === question.id ? completedQuestion : q);
 
-    const updatedQuestion = Object.assign(question, {completed: true });
-    const updatedQuestions = this.state.questions.filter(q => !q.completed).map((q,i) => index === i ? updatedQuestion : q);
     this.setState({
       questions: updatedQuestions
     })
   }
 
   constructQuestions(questions) {
-    if(questions.length === 0){
-      return (
-        <h1> You lose, bitch. </h1>
-      );
-    }
     return questions.map((q, i) => {
       return (
         <div className="question-block" key={i}>
           <h3>{q.title}</h3>
           <p>{q.content}</p>
-          <p>Completed? {q.completed.toString()}</p>
+          <p>Type: {q.type}</p>
+          <p>Completed: {q.completed.toString()}</p>
 
           {q.options.map((o,i)=>{
             return (
               <div key={i}>
-                <button onClick={this.computeChoice.bind(this, o, q, i)}>{o}</button>
+                <button onClick={this.computeChoice.bind(this, o, q)}>{o}</button>
               </div>
             )
           })}
@@ -54,7 +48,9 @@ class Compass extends React.Component {
   render() {
     const formattedQuestions = this.constructQuestions(this.state.questions);
     return (
-      <h1>{formattedQuestions}</h1>
+      <div>
+        {formattedQuestions}
+      </div>
     );
   }
 }

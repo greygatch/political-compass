@@ -1,22 +1,35 @@
 {
     "questions": [
       {
+        "id": 1,
+        "type": "Social",
         "title": "Foo",
         "content": "How do you feel about foo?",
         "options": ["1","2","3"],
         "completed": false
       },
       {
+        "id": 2,
+        "type": "Social",
         "title": "Bar",
         "content": "How do you feel about bar?",
         "options": ["1","2","3"],
         "completed": false
       },
       {
-        "title": "Three",
+        "id": 3,
+        "type": "Economic",
+        "title": "Baz",
         "content": "How do you feel about baz?",
         "options": ["1","2","3"],
-        "correct": false,
+        "completed": false
+      },
+      {
+        "id": 4,
+        "type": "Economic",
+        "title": "Buzz",
+        "content": "How do you feel about buzz?",
+        "options": ["1","2","3"],
         "completed": false
       }
   ]
