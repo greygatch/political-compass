@@ -39,7 +39,6 @@ class Compass extends React.Component {
         <h3>{question.title}</h3>
         <p>{question.content}</p>
         <p>Type: {question.type}</p>
-        <p>Completed: {question.completed.toString()}</p>
 
         {question.options.map((o,i)=>{
           return (

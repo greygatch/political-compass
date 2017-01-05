@@ -5,32 +5,28 @@
         "type": "social",
         "title": "Foo",
         "content": "How do you feel about foo?",
-        "options": [1,2,3],
-        "completed": false
+        "options": [1,2,3]
       },
       {
         "id": 2,
         "type": "social",
         "title": "Bar",
         "content": "How do you feel about bar?",
-        "options": [1,2,3],
-        "completed": false
+        "options": [1,2,3]
       },
       {
         "id": 3,
         "type": "economic",
         "title": "Baz",
         "content": "How do you feel about baz?",
-        "options": [1,2,3],
-        "completed": false
+        "options": [1,2,3]
       },
       {
         "id": 4,
         "type": "economic",
         "title": "Buzz",
         "content": "How do you feel about buzz?",
-        "options": [1,2,3],
-        "completed": false
+        "options": [1,2,3]
       }
   ]
 }
