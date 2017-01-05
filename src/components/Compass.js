@@ -5,7 +5,7 @@ import * as content from '../../content/questions.json';
 class Compass extends React.Component {
   constructor(props){
       super()
-      this.constructQuestions = this.constructQuestions.bind(this);
+      this.constructQuestions = this.constructQuestion.bind(this);
       this.computeChoice = this.computeChoice.bind(this);
 
       this.state = {
@@ -18,40 +18,43 @@ class Compass extends React.Component {
   computeChoice(option, question) {
     const completedQuestion = Object.assign(question, {completed: true });
     const updatedQuestions = this.state.questions.map((q,i) => q.id === question.id ? completedQuestion : q);
-
+    const updatedIndex = this.state.questionIndex + 1;
     this.setState({
-      questions: updatedQuestions
+      questions: updatedQuestions,
+      questionIndex: updatedIndex
     })
   }
 
-  constructQuestions(questions) {
-    return questions.map((q, i) => {
-      return (
-        <div className="question-block" key={i}>
-          <h3>{q.title}</h3>
-          <p>{q.content}</p>
-          <p>Type: {q.type}</p>
-          <p>Completed: {q.completed.toString()}</p>
+  constructQuestion(question) {
+    return (
+      <div className="question-block">
+        <h3>{question.title}</h3>
+        <p>{question.content}</p>
+        <p>Type: {question.type}</p>
+        <p>Completed: {question.completed.toString()}</p>
 
-          {q.options.map((o,i)=>{
-            return (
-              <div key={i}>
-                <button onClick={this.computeChoice.bind(this, o, q)}>{o}</button>
-              </div>
-            )
-          })}
-        </div>
-      );
-    });
+        {question.options.map((o,i)=>{
+          return (
+            <div key={i}>
+              <button onClick={this.computeChoice.bind(this, o, question)}>{o}</button>
+            </div>
+          )
+        })}
+      </div>
+    );
   }
 
   render() {
-    const formattedQuestions = this.constructQuestions(this.state.questions);
-    return (
-      <div>
+    if(this.state.questions[this.state.questionIndex]){
+      const formattedQuestions = this.constructQuestion(this.state.questions[this.state.questionIndex]);
+      return (
+        <div>
         {formattedQuestions}
-      </div>
-    );
+        </div>
+      );
+    }else {
+      return <h1>Game Over</h1>
+    }
   }
 }
 
