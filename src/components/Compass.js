@@ -10,18 +10,26 @@ class Compass extends React.Component {
 
       this.state = {
         questions: content.questions,
-        questionIndex: 0
+        questionIndex: 0,
+        socialScore: 0,
+        economicsScore: 0
       }
   }
 
 
   computeChoice(option, question) {
+    const { socialScore, economicsScore } = this.state;
     const completedQuestion = Object.assign(question, {completed: true });
     const updatedQuestions = this.state.questions.map((q,i) => q.id === question.id ? completedQuestion : q);
     const updatedIndex = this.state.questionIndex + 1;
+    const updatedSocialScore = question.type === 'social' ? socialScore + option : socialScore;
+    const updatedEconomicsScore = question.type === 'economic' ? economicsScore + option : economicsScore;
+
     this.setState({
       questions: updatedQuestions,
-      questionIndex: updatedIndex
+      questionIndex: updatedIndex,
+      socialScore: updatedSocialScore,
+      economicsScore: updatedEconomicsScore,
     })
   }
 
@@ -45,15 +53,22 @@ class Compass extends React.Component {
   }
 
   render() {
+    const { questions, questionIndex, socialScore, economicsScore } = this.state;
     if(this.state.questions[this.state.questionIndex]){
-      const formattedQuestions = this.constructQuestion(this.state.questions[this.state.questionIndex]);
+      const formattedQuestions = this.constructQuestion(questions[questionIndex]);
       return (
         <div>
         {formattedQuestions}
         </div>
       );
     }else {
-      return <h1>Game Over</h1>
+      return (
+        <div>
+          <h1>Game Over</h1>
+          <p>Social: {socialScore}</p>
+          <p>Economic: {economicsScore}</p>
+        </div>
+      )
     }
   }
 }
