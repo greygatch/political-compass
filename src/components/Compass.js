@@ -7,6 +7,7 @@ class Compass extends React.Component {
       super()
       this.constructQuestions = this.constructQuestion.bind(this);
       this.computeChoice = this.computeChoice.bind(this);
+      this.resetApp = this.resetApp.bind(this);
 
       this.state = {
         questions: content.questions,
@@ -51,6 +52,16 @@ class Compass extends React.Component {
     );
   }
 
+  resetApp() {
+    console.log('foobar');
+    this.setState({
+      questions: content.questions,
+      questionIndex: 0,
+      socialScore: 0,
+      economicsScore: 0
+    })
+  }
+
   render() {
     const { questions, questionIndex, socialScore, economicsScore } = this.state;
     if(this.state.questions[this.state.questionIndex]){
@@ -66,6 +77,7 @@ class Compass extends React.Component {
           <h1>Game Over</h1>
           <p>Social: {socialScore}</p>
           <p>Economic: {economicsScore}</p>
+          <button onClick={this.resetApp}>Reset</button>
         </div>
       )
     }
