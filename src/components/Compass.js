@@ -53,7 +53,6 @@ class Compass extends React.Component {
   }
 
   resetApp() {
-    console.log('foobar');
     this.setState({
       questions: content.questions,
       questionIndex: 0,
