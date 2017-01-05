@@ -9,7 +9,7 @@ const App = ({ children }) => (
       <Link to="/about">About</Link>
     </header>
     <section>
-      {children || 'Welcome to React Starterify'}
+      {children}
     </section>
   </div>
 );

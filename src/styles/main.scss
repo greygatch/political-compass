@@ -10,8 +10,8 @@ body {
 }
 
 header {
-  color: #fff;
-  background: #0066bb url(../images/reactjs.png) no-repeat right 10px;
+  color: black;
+  background: blue;
   background-size: contain;
   h1 {
     display: inline-block;
@@ -29,6 +29,11 @@ header {
       background-color: #0085F3;
     }
   }
+}
+
+.question-block{
+  background-color: pink;
+  width: 100%
 }
 
 section {

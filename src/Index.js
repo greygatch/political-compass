@@ -10,7 +10,7 @@ window.React = React;
 render(
   (<Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute path="/" component={Compass} />
+      <IndexRoute component={Compass} />
       <Route path="/about" component={About} />
     </Route>
   </Router>), document.getElementById('content')
