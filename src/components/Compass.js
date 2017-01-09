@@ -84,6 +84,9 @@ class Compass extends React.Component {
     return (
       <div>
         <h1>Game Over</h1>
+        <div id="compass-container">
+          Compass
+        </div>
         <p>Social Score: {socialScore} | Social Count: {socialCount} | X-Axis: {socialAverage}</p>
         <p>Economics Score: {economicsScore} | Economics Count: {economicsCount} | Y-Axis: {economicsAverage}</p>
         <button onClick={this.resetApp}>Reset</button>
