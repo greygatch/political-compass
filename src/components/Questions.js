@@ -1,7 +1,7 @@
 import React from 'react';
 import * as content from '../../content/questions.json';
 
-class Compass extends React.Component {
+class Questions extends React.Component {
   constructor(props) {
     super(props);
     this.constructQuestions = this.constructQuestion.bind(this);
@@ -95,6 +95,6 @@ class Compass extends React.Component {
   }
 }
 
-Compass.propTypes = { children: React.PropTypes.object };
+Questions.propTypes = { children: React.PropTypes.object };
 
-export default Compass;
+export default Questions;
