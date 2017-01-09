@@ -1,11 +1,13 @@
 import React from 'react';
 import Compass from './Compass';
+import Question from './Question';
 import * as content from '../../content/questions.json';
 
 class Quiz extends React.Component {
   constructor(props) {
     super(props);
     this.constructQuestions = this.constructQuestion.bind(this);
+    this.computeChoice = this.computeChoice.bind(this);
     this.resetApp = this.resetApp.bind(this);
 
     this.state = this.returnOriginalState();
@@ -46,23 +48,9 @@ class Quiz extends React.Component {
 
 
   constructQuestion(question) {
-    // TODO
-    const QuestionOptions = question.options.map((option, i) => {
-      return (
-        <div key={i}>
-          <button onClick={() => this.computeChoice(option, question)}>{option}</button>
-        </div>
-      );
-    });
-
     return (
-      <div className="question-block">
-        <h3>{question.title}</h3>
-        <p>{question.content}</p>
-        <p>Type: {question.type}</p>
-        {QuestionOptions}
-      </div>
-    );
+      <Question question={question} computeChoice={this.computeChoice} />
+    )
   }
 
   resetApp() {
