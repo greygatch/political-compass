@@ -1,4 +1,5 @@
 import React from 'react';
+import Compass from './Compass';
 import * as content from '../../content/questions.json';
 
 class Questions extends React.Component {
@@ -77,16 +78,15 @@ class Questions extends React.Component {
       const formattedQuestion = this.constructQuestion(currentQuestion);
       return (
         <div>
+          <Compass />
           {formattedQuestion}
         </div>
       );
     }
     return (
       <div>
+        <Compass />
         <h1>Game Over</h1>
-        <div id="compass-container">
-          Compass
-        </div>
         <p>Social Score: {socialScore} | Social Count: {socialCount} | X-Axis: {socialAverage}</p>
         <p>Economics Score: {economicsScore} | Economics Count: {economicsCount} | Y-Axis: {economicsAverage}</p>
         <button onClick={this.resetApp}>Reset</button>
