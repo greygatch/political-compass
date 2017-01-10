@@ -1,4 +1,5 @@
 import React from 'react';
+import { JXGBoard } from 'jsxgraph-react';
 
 class Compass extends React.Component {
   constructor(props) {
@@ -16,10 +17,9 @@ class Compass extends React.Component {
 
 
   render() {
+    console.log('!!!!!!', JXGBoard);
     return (
-      <div id="compass-container">
-        Compass
-      </div>
+      <JXGBoard id="compass-container" style={{backgroundColor: 'pink'}}/>
     );
   }
 }
