@@ -88,7 +88,7 @@ class Quiz extends React.Component {
           Social: {affiliation.socialLeaning}
         </div>
         <div>
-          Economic: {affiliation.socialLeaning}
+          Economic: {affiliation.economicsLeaning}
         </div>
       </div>
     )

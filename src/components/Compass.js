@@ -55,11 +55,14 @@ class Compass extends React.Component {
         width={450}
         height={350}
         axes={true}
-        dotRadius={10}
+        dotRadius={5}
         grid={true}
         verticalGrid={true}
         margin={{top: 10, right: 10, bottom: 30, left: 100}}
+        axisLabels={{x: 'Social', y: 'Economic'}}
         config={config}
+        xDomainRange={[0,100]}
+        yDomainRange={[0,100]}
       />
     );
   }
