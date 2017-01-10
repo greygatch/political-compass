@@ -1,5 +1,5 @@
 import React from 'react';
-import { JXGBoard } from 'jsxgraph-react';
+import { ScatterplotChart } from 'react-easy-chart';
 
 class Compass extends React.Component {
   constructor(props) {
@@ -17,9 +17,48 @@ class Compass extends React.Component {
 
 
   render() {
-    console.log('!!!!!!', JXGBoard);
+    const { economicsAverage, socialAverage } = this.props;
+    const config = [
+      {
+        type: 'Two',
+        color: 'rgba(0,0,0,0)',
+        stroke: 'white'
+      },
+      {
+        type: 'Three',
+        color: 'rgba(0,0,0,0)',
+        stroke: 'white'
+      }
+    ]
+    const data = [
+      {
+        type: 'One',
+        x: (economicsAverage * 2) * 10 || 0,
+        y: (socialAverage * 2) * 10 || 0
+      },
+      {
+        type: 'Two',
+        x: 100,
+        y: 100
+      },
+      {
+        type: 'Three',
+        x: 0,
+        y: 0
+      }
+  ];
     return (
-      <JXGBoard id="compass-container" style={{backgroundColor: 'pink'}}/>
+      <ScatterplotChart
+        data={data}
+        width={450}
+        height={350}
+        axes={true}
+        dotRadius={12}
+        grid={true}
+        verticalGrid={true}
+        margin={{top: 10, right: 10, bottom: 30, left: 100}}
+        config={config}
+      />
     );
   }
 }

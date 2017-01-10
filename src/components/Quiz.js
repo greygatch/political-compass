@@ -73,7 +73,7 @@ class Quiz extends React.Component {
     }
     return (
       <div>
-        <Compass />
+        <Compass economicsAverage={economicsAverage} socialAverage={socialAverage} />
         <h1>Game Over</h1>
         <p>Social Score: {socialScore} | Social Count: {socialCount} | X-Axis: {socialAverage}</p>
         <p>Economics Score: {economicsScore} | Economics Count: {economicsCount} | Y-Axis: {economicsAverage}</p>
