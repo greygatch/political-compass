@@ -1,12 +1,7 @@
 {
-  "name": "react-starterify",
-  "version": "2.4.1",
-  "description": "React JS application skeleton using Browserify and other awesome tools",
+  "name": "political-compass",
+  "version": "0.0.1",
   "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Granze/react-starterify"
-  },
   "keywords": [
     "gulp",
     "react",
@@ -24,12 +19,8 @@
     "build": "gulp build",
     "deploy": "gulp deploy"
   },
-  "author": "Maurizio Mangione",
+  "author": "Evan Gatchell",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Granze/react-starterify/issues"
-  },
-  "homepage": "https://github.com/Granze/react-starterify",
   "dependencies": {
     "history": "^3.0.0",
     "react": "^15.0.1",
