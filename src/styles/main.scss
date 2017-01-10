@@ -33,16 +33,13 @@ header {
 }
 
 .question-block{
-  background-color: pink;
-  width: 100%
+  background-color: white;
+  width: 100%;
+  button {
+    float: left;
+  }
 }
 
 section {
  padding: 20px;
-}
-
-#compass-container{
-  height: 250px;
-  width: 250px;
-  background-color: tomato;
 }
