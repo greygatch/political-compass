@@ -46,42 +46,42 @@
         "id": 7,
         "type": "social",
         "title": "Maz",
-        "content": "How do you feel about baz?",
+        "content": "How do you feel about maz?",
         "options": [1,2,3,4,5]
       },
       {
         "id": 8,
         "type": "economic",
         "title": "Ral",
-        "content": "How do you feel about baz?",
+        "content": "How do you feel about ral?",
         "options": [1,2,3,4,5]
       },
       {
         "id": 9,
         "type": "social",
         "title": "Lso",
-        "content": "How do you feel about baz?",
+        "content": "How do you feel about lso?",
         "options": [1,2,3,4,5]
       },
       {
         "id": 10,
         "type": "economic",
         "title": "Cho",
-        "content": "How do you feel about baz?",
+        "content": "How do you feel about cho?",
         "options": [1,2,3,4,5]
       },
       {
         "id": 11,
         "type": "social",
         "title": "Ree",
-        "content": "How do you feel about baz?",
+        "content": "How do you feel about ree?",
         "options": [1,2,3,4,5]
       },
       {
         "id": 12,
         "type": "economic",
         "title": "Joo",
-        "content": "How do you feel about baz?",
+        "content": "How do you feel about joo?",
         "options": [1,2,3,4,5]
       }
   ]
