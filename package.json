@@ -16,21 +16,13 @@
     "kickstarter",
     "ES6",
     "ES2015",
-    "babel",
-    "ava"
+    "babel"
   ],
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
-  },
   "scripts": {
     "start": "npm run watch",
     "watch": "gulp watch",
     "build": "gulp build",
-    "deploy": "gulp deploy",
-    "test": "ava --tap | tap-nyan"
+    "deploy": "gulp deploy"
   },
   "author": "Maurizio Mangione",
   "license": "MIT",
@@ -46,7 +38,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "ava": "^0.15.2",
     "babel": "^6.5.2",
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.0.4",
