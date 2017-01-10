@@ -77,6 +77,23 @@ class Quiz extends React.Component {
     );
   }
 
+  constructAffiliationDisplay(affiliation){
+
+    return (
+      <div>
+        <div>
+          Moderate: {affiliation.isModerate.toString()}
+        </div>
+        <div>
+          Social: {affiliation.socialLeaning}
+        </div>
+        <div>
+          Economic: {affiliation.socialLeaning}
+        </div>
+      </div>
+    )
+  }
+
   resetApp() {
     this.setState(this.returnOriginalState());
   }
@@ -86,14 +103,13 @@ class Quiz extends React.Component {
     const { questions, questionIndex, socialScore, socialCount, socialAverage, economicsScore, economicsCount, economicsAverage } = this.state;
     const currentQuestion = questions[questionIndex];
     const politicalAffiliation = this.computeAffiliation(socialAverage, economicsAverage);
+    const politicalAffiliationDisplay = this.constructAffiliationDisplay(politicalAffiliation);
     if (currentQuestion) {
       const formattedQuestion = this.constructQuestion(currentQuestion);
       return (
         <div>
           <Compass economicsAverage={economicsAverage} socialAverage={socialAverage} />
-          {politicalAffiliation.socialLeaning}
-          {politicalAffiliation.economicsLeaning}
-          {politicalAffiliation.isModerate.toString()}
+          {politicalAffiliationDisplay}
           {formattedQuestion}
         </div>
       );
@@ -101,9 +117,7 @@ class Quiz extends React.Component {
     return (
       <div>
         <Compass economicsAverage={economicsAverage} socialAverage={socialAverage} />
-        {politicalAffiliation.socialLeaning}
-        {politicalAffiliation.economicsLeaning}
-        {politicalAffiliation.isModerate.toString()}
+        {politicalAffiliationDisplay}
         <h1>Game Over</h1>
         <p>Social Score: {socialScore} | Social Count: {socialCount} | X-Axis: {socialAverage}</p>
         <p>Economics Score: {economicsScore} | Economics Count: {economicsCount} | Y-Axis: {economicsAverage}</p>
