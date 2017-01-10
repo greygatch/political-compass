@@ -9,15 +9,64 @@
       },
       {
         "id": 2,
-        "type": "social",
+        "type": "economic",
         "title": "Bar",
         "content": "How do you feel about bar?",
         "options": [1,2,3,4,5]
       },
       {
         "id": 3,
-        "type": "economic",
+        "type": "social",
         "title": "Baz",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 4,
+        "type": "economic",
+        "title": "Buzz",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 5,
+        "type": "social",
+        "title": "Gab",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 6,
+        "type": "economic",
+        "title": "Guz",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 7,
+        "type": "social",
+        "title": "Maz",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 8,
+        "type": "economic",
+        "title": "Ral",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 9,
+        "type": "social",
+        "title": "Lso",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 10,
+        "type": "economic",
+        "title": "Cho",
         "content": "How do you feel about baz?",
         "options": [1,2,3,4,5]
       }

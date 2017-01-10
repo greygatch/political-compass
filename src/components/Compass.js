@@ -18,7 +18,8 @@ class Compass extends React.Component {
 
   render() {
     const { economicsAverage, socialAverage } = this.props;
-    console.log('???', economicsAverage);
+    const xPos = (socialAverage * 2) * 10 || 0;
+    const yPos = (economicsAverage * 2) * 10 || 0;
     const config = [
       {
         type: 'Two',
@@ -34,8 +35,8 @@ class Compass extends React.Component {
     const data = [
       {
         type: 'One',
-        x: (economicsAverage * 2) * 10 || 0,
-        y: (socialAverage * 2) * 10 || 0
+        x: xPos,
+        y: yPos
       },
       {
         type: 'Two',
