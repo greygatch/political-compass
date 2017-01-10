@@ -18,6 +18,7 @@ class Compass extends React.Component {
 
   render() {
     const { economicsAverage, socialAverage } = this.props;
+    console.log('???', economicsAverage);
     const config = [
       {
         type: 'Two',

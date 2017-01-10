@@ -19,8 +19,10 @@ class Quiz extends React.Component {
       questionIndex: 0,
       socialScore: 0,
       socialCount: 0,
+      socialAverage: 0,
       economicsScore: 0,
-      economicsCount: 0
+      economicsCount: 0,
+      economicsAverage: 0
     }
   }
 
@@ -32,16 +34,20 @@ class Quiz extends React.Component {
     const updatedIndex = this.state.questionIndex + 1;
     const updatedSocialScore = question.type === 'social' ? socialScore + option : socialScore;
     const updatedSocialCount = question.type === 'social' ? socialCount + 1 : socialCount
+    const updatedSocialAverage = updatedSocialScore / updatedSocialCount;
     const updatedEconomicsScore = question.type === 'economic' ? economicsScore + option : economicsScore;
     const updatedEconomicsCount = question.type === 'economic' ? economicsCount + 1 : economicsCount;
+    const updatedEconomicsAverage = updatedEconomicsScore / updatedEconomicsCount;
 
     this.setState({
       questions: updatedQuestions,
       questionIndex: updatedIndex,
       socialScore: updatedSocialScore,
-      economicsScore: updatedEconomicsScore,
       socialCount: updatedSocialCount,
-      economicsCount: updatedEconomicsCount
+      socialAverage: updatedSocialAverage,
+      economicsScore: updatedEconomicsScore,
+      economicsCount: updatedEconomicsCount,
+      economicsAverage: updatedEconomicsAverage
     });
   }
 
@@ -58,15 +64,15 @@ class Quiz extends React.Component {
   }
 
   render() {
-    const { questions, questionIndex, socialScore, socialCount, economicsScore, economicsCount } = this.state;
-    const socialAverage = socialScore / socialCount;
-    const economicsAverage = economicsScore / economicsCount;
+
+    const { questions, questionIndex, socialScore, socialCount, socialAverage, economicsScore, economicsCount, economicsAverage } = this.state;
     const currentQuestion = questions[questionIndex];
+
     if (currentQuestion) {
       const formattedQuestion = this.constructQuestion(currentQuestion);
       return (
         <div>
-          <Compass />
+          <Compass economicsAverage={economicsAverage} socialAverage={socialAverage} />
           {formattedQuestion}
         </div>
       );
