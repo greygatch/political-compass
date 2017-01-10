@@ -57,13 +57,13 @@ class Quiz extends React.Component {
     let economicsLeaning;
 
     if(socialAverage === 2.5){
-      socialLeaning = 'Neutral';
+      socialLeaning = 'Centrist';
     } else {
-      socialLeaning = socialAverage > 2.5 ? 'Libertarian' : 'Authoritarian';
+      socialLeaning = socialAverage > 2.5 ? 'Authoritarian' : 'Libertarian';
     }
 
     if(economicsAverage === 2.5){
-      economicsLeaning = 'Neutral';
+      economicsLeaning = 'Centrist';
     } else {
       economicsLeaning = economicsAverage > 2.5 ? 'Right' : 'Left';
     }

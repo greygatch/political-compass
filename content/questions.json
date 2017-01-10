@@ -69,6 +69,20 @@
         "title": "Cho",
         "content": "How do you feel about baz?",
         "options": [1,2,3,4,5]
+      },
+      {
+        "id": 11,
+        "type": "social",
+        "title": "Ree",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
+      },
+      {
+        "id": 12,
+        "type": "economic",
+        "title": "Joo",
+        "content": "How do you feel about baz?",
+        "options": [1,2,3,4,5]
       }
   ]
 }

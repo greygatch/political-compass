@@ -59,7 +59,7 @@ class Compass extends React.Component {
         grid={true}
         verticalGrid={true}
         margin={{top: 10, right: 10, bottom: 30, left: 100}}
-        axisLabels={{x: 'Social', y: 'Economic'}}
+        axisLabels={{x: 'Economic', y: 'Social'}}
         config={config}
         xDomainRange={[0,100]}
         yDomainRange={[0,100]}
