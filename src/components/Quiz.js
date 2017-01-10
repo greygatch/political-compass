@@ -51,12 +51,30 @@ class Quiz extends React.Component {
     });
   }
 
+  computeAffiliation(socialAverage, economicsAverage) {
+    const isModerate = socialAverage < 3.5 && socialAverage > 1.5 && economicsAverage < 3.5 && economicsAverage > 1.5;
+    let socialLeaning;
+    let economicsLeaning;
 
+    if(socialAverage === 2.5){
+      socialLeaning = 'Neutral';
+    } else {
+      socialLeaning = socialAverage > 2.5 ? 'Libertarian' : 'Authoritarian';
+    }
+
+    if(economicsAverage === 2.5){
+      economicsLeaning = 'Neutral';
+    } else {
+      economicsLeaning = economicsAverage > 2.5 ? 'Right' : 'Left';
+    }
+
+    return { socialLeaning, economicsLeaning, isModerate };
+  }
 
   constructQuestion(question) {
     return (
       <Question question={question} computeChoice={this.computeChoice} />
-    )
+    );
   }
 
   resetApp() {
@@ -67,12 +85,15 @@ class Quiz extends React.Component {
 
     const { questions, questionIndex, socialScore, socialCount, socialAverage, economicsScore, economicsCount, economicsAverage } = this.state;
     const currentQuestion = questions[questionIndex];
-
+    const politicalAffiliation = this.computeAffiliation(socialAverage, economicsAverage);
     if (currentQuestion) {
       const formattedQuestion = this.constructQuestion(currentQuestion);
       return (
         <div>
           <Compass economicsAverage={economicsAverage} socialAverage={socialAverage} />
+          {politicalAffiliation.socialLeaning}
+          {politicalAffiliation.economicsLeaning}
+          {politicalAffiliation.isModerate.toString()}
           {formattedQuestion}
         </div>
       );
@@ -80,6 +101,9 @@ class Quiz extends React.Component {
     return (
       <div>
         <Compass economicsAverage={economicsAverage} socialAverage={socialAverage} />
+        {politicalAffiliation.socialLeaning}
+        {politicalAffiliation.economicsLeaning}
+        {politicalAffiliation.isModerate.toString()}
         <h1>Game Over</h1>
         <p>Social Score: {socialScore} | Social Count: {socialCount} | X-Axis: {socialAverage}</p>
         <p>Economics Score: {economicsScore} | Economics Count: {economicsCount} | Y-Axis: {economicsAverage}</p>

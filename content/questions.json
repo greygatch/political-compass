@@ -20,13 +20,6 @@
         "title": "Baz",
         "content": "How do you feel about baz?",
         "options": [1,2,3,4,5]
-      },
-      {
-        "id": 4,
-        "type": "economic",
-        "title": "Buzz",
-        "content": "How do you feel about buzz?",
-        "options": [1,2,3,4,5]
       }
   ]
 }
