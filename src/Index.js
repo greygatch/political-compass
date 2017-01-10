@@ -9,7 +9,7 @@ window.React = React;
 
 render(
   (<Router history={browserHistory}>
-    <Route path="/*" component={App}>
+    <Route path="/" component={App}>
       <IndexRoute component={Quiz} />
       <Route path="/about" component={About} />
     </Route>
