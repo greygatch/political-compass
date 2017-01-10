@@ -34,10 +34,10 @@ class Quiz extends React.Component {
     const updatedIndex = this.state.questionIndex + 1;
     const updatedSocialScore = question.type === 'social' ? socialScore + option : socialScore;
     const updatedSocialCount = question.type === 'social' ? socialCount + 1 : socialCount
-    const updatedSocialAverage = updatedSocialScore / updatedSocialCount;
+    const updatedSocialAverage = updatedSocialScore / updatedSocialCount || 0;
     const updatedEconomicsScore = question.type === 'economic' ? economicsScore + option : economicsScore;
     const updatedEconomicsCount = question.type === 'economic' ? economicsCount + 1 : economicsCount;
-    const updatedEconomicsAverage = updatedEconomicsScore / updatedEconomicsCount;
+    const updatedEconomicsAverage = updatedEconomicsScore / updatedEconomicsCount || 0;
 
     this.setState({
       questions: updatedQuestions,
