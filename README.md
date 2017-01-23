@@ -2,6 +2,10 @@
 
 A dynamic political compass display using React.
 
+## Notes
+
+React Easy Chart is dependent on d3 v3.x
+
 ## Usage
 
 __Install the dependencies:__
